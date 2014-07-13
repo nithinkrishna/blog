@@ -1,0 +1,12 @@
+# Site settings
+title: Nithin Krishna
+email: nithin@codebrahma.com
+description: "Just another ruby, rails and javascript guy."
+baseurl: ""
+url: "http://codebrahma.com/team/#nithin_krishna"
+twitter_username: nithinkrishh
+github_username:  nithinkrishna
+
+# Build settings
+markdown: kramdown
+permalink: pretty
