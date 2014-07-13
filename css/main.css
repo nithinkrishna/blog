@@ -427,7 +427,7 @@ hr{
     background-image:      -o-linear-gradient(left, #C9C9C9, #BEAAAA, #C9C9C9); 
 }
 
-.screen-shot{
-  width: 300px;
+.full-screen{
+  width: 100%;
   height: auto;
 }
