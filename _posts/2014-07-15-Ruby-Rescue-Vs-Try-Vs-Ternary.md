@@ -11,7 +11,7 @@ author: Nithin Krishna
 handle: "nithinkrishh"
 ---
 
-All of us have faced this situation when, the current_resource object provided by devise turns out to be nil. All method invocations on current_resource will throw an `undefined method for nil:NilClass` exception.
+All of us have faced this situation when, the current-resource object provided by devise turns out to be nil. All method invocations on current-resource will throw an `undefined method for nil:NilClass` exception.
 
 To handle this, we can try one of the following.
 
@@ -30,9 +30,9 @@ n = 5000000
 current_resource = nil
 
 Benchmark.bm do |x|
-  x.report("rescue") do n.times { current_resource.name rescue nil } end
-  x.report("try") do n.times { current_resource.try(:name) } end
-  x.report("ternary") do n.times { current_resource ? current_resource.name : nil } end
+  x.report("rescue") { n.times { current_resource.name rescue nil } }
+  x.report("try") { n.times { current_resource.try(:name) } }
+  x.report("ternary") { n.times { current_resource ? current_resource.name : nil } }
 end
 
 {% endhighlight %}
