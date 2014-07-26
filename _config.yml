@@ -1,12 +1,51 @@
-# Site settings
-title: Nithin Krishna
-email: nithin@codebrahma.com
-description: "Just another full stack web developer."
-baseurl: ""
-url: "http://codebrahma.com/team/#nithin_krishna"
-twitter_username: nithinkrishh
-github_username:  nithinkrishna
+# Dependencies
+markdown:	redcarpet
+pygments:	true
 
-# Build settings
-markdown: kramdown
-permalink: pretty
+# Permalinks
+permalink:	/blog/:title
+
+# Setup
+title:		Solace in code
+tagline:	'Just another full stack web developer'
+description:	'My personal blog'
+url:		http://solaceincode.me
+
+author:
+  name:		'Ian Camporez Brunelli'
+  url:		https://google.com/+IanCamporezBrunelli
+
+paginate:	5
+
+# Custom vars
+icon:		/assets/images/icon.png
+cover:		/assets/images/hero.jpg
+
+social:
+  - icon:	twitter
+    url:	https://twitter.com/nithinkrishh
+    desc:	Follow me on twitter
+
+  - icon: facebook
+    url:  https://facebook.com/nithinkrishh
+    desc: Add friend me on facebook
+
+  - icon:	github
+    url:	https://github.com/nithinkrishna
+    desc:	Fork me on github
+
+  - icon:	feed
+    url:	http://solaceincode.me/feed.xml
+    desc:	Subscribe to my feed
+
+menu:
+  - title:	Home
+    url:	/
+
+  - title:	About
+    url:	/about
+
+copyright:
+  author:	Nithin Krishna
+  url:		http://solaceincode.me
+  type_title:	All rights reserved

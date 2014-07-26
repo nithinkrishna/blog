@@ -1,0 +1,32 @@
+#home-title-2{
+	font-family: 'Audiowide', cursive;
+	background: rgba(255, 255, 255, 0.29);
+	padding: 25px;
+	min-height: 50px;
+	min-width: 320px;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	margin-top: -100px;
+	font-size: 40px;
+	text-align: center;
+}
+
+#page-title-2{
+	font-family: 'Audiowide', cursive;
+	background: rgba(255, 255, 255, 0.29);
+	font-size: 40px;
+	padding: 20px 15px;
+	height: 60px;
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -30px;
+	margin-left: -200px;
+	text-align: center;
+}
+
+#home-title-2 a, #page-title-2 a{
+	color: rgb(79, 83, 79);
+}
