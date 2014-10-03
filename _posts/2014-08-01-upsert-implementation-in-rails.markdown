@@ -4,7 +4,7 @@ title:  "Implementing Upsert in Rails"
 categories: ruby
 comments: true
 description: Implementing Upsert in Rails
-tags: 
+tags:
   - ruby
   - rails
   - upsert
@@ -54,7 +54,6 @@ end
 {% endhighlight %}
 
 ##2.Rescue from failure
-s
 {% highlight ruby %}
 def upsert(attributes)
   begin
