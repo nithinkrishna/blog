@@ -78,7 +78,7 @@ var india = new Country({ name: "India" });
 india.log(); // Logs 'India'
 
 
-var chennai = new Country({ name: "Chennai" });
+var chennai = new City({ name: "Chennai" });
 chennai.log(); // Logs 'Chennai'
 
 ```
