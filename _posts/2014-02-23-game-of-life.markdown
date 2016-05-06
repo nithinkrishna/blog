@@ -23,8 +23,6 @@ So what are the rules?
 
 Simple enough right? Create a matrix of (n*n) cells, impose these constraints and watch the system progress form one generation to another. __The results of this simple experiment is mindblowing.__ Try playing around with the initial configration of the system and observe the diverse patterns which are produced by minute changes to the initial configration.
 
-Let's break this down. You can see 2010 in there, which is the my year of joining and '10z10y00xx' which is apparently my register number. I was a little bored last night so changed the register number at the end of the URL to 10z10y00x(x+1).jpg and guess what? I was able to see my friend's picture as well. What did this mean? Well.. I can now access every fourth your student's image from the SRM database.
-
 In essence the game of life demonstrates how complex patterns and behaviors can emerge from simple rules imposed on a system. The infinite diversity of nature can be explained by this very simple idea.
 
 Everything form the __Big bang__ to __Abiogenesis__ are examples of systems with a fixed initial configration and rules governing the interaction of the various elements in the system, with each other. The results of both these phenomenon is the world as we know it today.
