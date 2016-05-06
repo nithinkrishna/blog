@@ -1,51 +1,128 @@
-# Dependencies
-markdown:	redcarpet
-pygments:	true
+# --- General options --- #
 
-# Permalinks
-permalink:	/blog/:title
+url: "http://nithinkrishna.github.io"
+baseurl: ""
 
-# Setup
-title:		Solace in code
-tagline:	'Just another full stack web developer'
-description:	'My personal blog'
-url:		http://solaceincode.me
+
+title: Mostly code
+
+description: Data Science, code, research and stuff
+
+navbar-links:
+  About Me: "aboutme"
+  # Resources:
+  #   - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
+  #   - Learn markdown: "http://www.markdowntutorial.com/"
+  #   - GitHub Pages: "https://pages.github.com/"
+  # Author's home: "http://deanattali.com"
+
+avatar: "/img/avatar-icon.png"
 
 author:
-  name:		'Ian Camporez Brunelli'
-  url:		https://google.com/+IanCamporezBrunelli
+  name: Nithin Krishna
+  email: "nithinkrishh@gmail.com"
+  facebook: nithinkrishh
+  github: nithinkrishna
+  twitter: nithinkrishh
+  linkedin: /in/nithinkrishh
+  stackoverflow: 1864134/nithin-krishna
 
-paginate:	5
+footer-links-active:
+  rss: true
+  facebook: true
+  email: true
+  twitter: true
+  github: true
+  linkedin: true
+  stackoverflow: true
 
-# Custom vars
-icon:		/assets/images/icon.png
-cover:		/assets/images/hero.jpg
+# How to display the link to the website in the footer
+# Remove this if you don't want a link in the footer
+# url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
 
-social:
-  - icon:	twitter
-    url:	https://twitter.com/nithinkrishh
-    desc:	Follow me on twitter
+# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
+#disqus: ""
 
-  - icon: facebook
-    url:  https://facebook.com/nithinkrishh
-    desc: Add friend me on facebook
+# Fill in your Google Analytics ID to track your website using GA
+google_analytics: "UA-77387621-1"
 
-  - icon:	github
-    url:	https://github.com/nithinkrishna
-    desc:	Fork me on github
+# --- Don't need to touch anything below here (but you can if you want) --- #
 
-  - icon:	feed
-    url:	http://nithinkrishna.github.io/feed.xml
-    desc:	Subscribe to my feed
+# Output options (more information on Jekyll's site)
+timezone: "America/Los_Angeles"
+markdown: redcarpet
+highlighter: rouge
+permalink: /:year-:month-:day-:title/
+paginate: 10
 
-menu:
-  - title:	Home
-    url:	/
+# Default YAML values (more information on Jekyll's site)
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true  # add comments to all blog posts
+  -
+    scope:
+      path: "" # all files
+    values:
+      layout: "page"
+      show-avatar: true
 
-  - title:	About
-    url:	/about
+# Exclude these files from production site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+  - Vagrantfile
 
-copyright:
-  author:	Nithin Krishna
-  url:		http://solaceincode.me
-  type_title:	All rights reserved.
+# prose.io config
+prose:
+  rooturl: '_posts'
+  media: 'img'
+  ignore:
+    - 404.html
+    - LICENSE
+    - feed.xml
+    - _config.yml
+    - /_layouts
+    - /_includes
+    - /css
+    - /img
+    - /js
+  metadata:
+    _posts:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "text"
+          label: "Post title"
+          placeholder: "Title"
+          alterable: true
+      - name: "subtitle"
+        field:
+          element: "textarea"
+          label: "Subtitle"
+          placeholder: "A description of your post."
+          alterable: true
+      - name: "date"
+        field:
+          element: "text"
+          label: "Date"
+          help: "Enter date of post."
+          placeholder: "yyyy-mm-dd"
+          alterable: true
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Publish"
+          help: "Check to publish post, uncheck to hide."
+
+gems: [jekyll-paginate]
