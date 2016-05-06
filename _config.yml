@@ -50,7 +50,6 @@ google_analytics: "UA-77387621-1"
 
 # Output options (more information on Jekyll's site)
 timezone: "America/Los_Angeles"
-markdown: redcarpet
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
 paginate: 10
