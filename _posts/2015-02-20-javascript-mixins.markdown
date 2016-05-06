@@ -11,7 +11,7 @@ author: Nithin Krishna
 handle: "nithinkrishh"
 ---
 
-###Javascript Mixins (TIL)
+### Javascript Mixins (TIL)
 
 One of the many things I loved about Ruby is the ability to define reusable modules/concerns to define behavior common to multiple classes.
 

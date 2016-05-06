@@ -6,7 +6,7 @@ categories: angularjs
 ---
 
 
-##Life and Beyond
+## Life and Beyond
 
 Ever heard of the game of life challange? Well, It involves building a working version of [John Convoy's game of life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life) in any programming language in under 45 minutes. Though I fell way short of the 45 minute mark, I did manage to make a working version of it.
 

@@ -19,7 +19,7 @@ Over the course of this blog, I'm going to suggest some some user-settings and v
 
 ---
 
-##Setting up
+## Setting up
 
 Aesthetics of code is key. You code needs to be pleasing to look at. In addition to choosing the right theme, sublime offers loads of other settings that allow you to prettify you code.
 
@@ -57,15 +57,15 @@ It's important to to be aware of the modes and layouts on offer. Choose layouts 
 
 ---
 
-##Packages
+## Packages
 
-###The package manager
+### The package manager
 
 The most important of them all. Install/Remove packages with a few simple key-strokes.
 
 <img src="https://db.tt/Hi5rfHio" />
 
-###Git and GitGutter
+### Git and GitGutter
 
 Git is one of the major contributer to our need to context switch. The Git plugin, helps you perform all the git tasks from within sublime.
 
@@ -75,14 +75,14 @@ Every time before we commit we end up viewing the diff of all staged files at le
 
 <img src="https://db.tt/gXy8fwnh" />
 
-###RubyTest
+### RubyTest
 
 Another major contributer to context-switching are Tests. RubyTest helps you run your specs from within sublime. It even runs specific specs, based on your cursor location.
 
 <img src="https://db.tt/ok7wKBjm" />
 
 
-###Sublime-Spotify
+### Sublime-Spotify
 
 This is my most favorite plugin. For all the music buffs out there like mem, Sublime spotify lets you control you music from inside sublime.
 

@@ -11,7 +11,7 @@ author: Nithin Krishna
 handle: "nithinkrishh"
 ---
 
-###Wrapper Classes (TIL)
+### Wrapper Classes (TIL)
 
 Wrapper classes are good. Whenever you are using a 3rd party plugin / API, make sure that you wrap within a container of your own. By standardizing the interface between your code and the 3rd party plugin you are making your a lot easier. Even if you have to change the underlying plugin completely code changes would be limited to the wrapper class, you don't have to touch any other part of the codebase.
 

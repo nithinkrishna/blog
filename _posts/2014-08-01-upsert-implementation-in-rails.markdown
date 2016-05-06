@@ -15,7 +15,7 @@ handle: "nithinkrishh"
 
 An upsert is `update` or `insert`. Upsert in database terms refers to an operation which should insert a row into a database table if it doesn't not already exist, or update it if it does. We can implement an upsert function in Rails by writing an `ActiveRecordExtension`. This will allow you to call the upsert method on any model.
 
-##The ActiveRecordExtension
+## The ActiveRecordExtension
 
 1.Create a file `active_record_extension.rb` in `app/extensions`.
 
@@ -43,7 +43,7 @@ require "active_record_extension"
 
 As I see it there are two ways to implement `upsert`. Lets look at both and run through some numbers.
 
-##1.Playing it safe
+## 1.Playing it safe
 
 {% highlight ruby %}
 def upsert(attributes)
@@ -53,7 +53,7 @@ def upsert(attributes)
 end
 {% endhighlight %}
 
-##2.Rescue from failure
+## 2.Rescue from failure
 {% highlight ruby %}
 def upsert(attributes)
   begin
@@ -67,7 +67,7 @@ end
 
 So just after looking at the code, you'd notice that the first implementation makes _2 queries_ everytime regardless of whether the record is present or not. The second implementation makes _1 query_ when the record is not present, but _3 queries_ if the record is present.
 
-##Some numbers
+## Some numbers
 
 Ideally an `INSERT` or `UPDATE` query takes around 100ms. However I'm stubbing the `create`, `update` and `where` methods with `sleep(0.00001)` for benchmarking. _Actual numbers will be 10,000 times higher._
 

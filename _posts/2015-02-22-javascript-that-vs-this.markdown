@@ -11,7 +11,7 @@ author: Nithin Krishna
 handle: "nithinkrishh"
 ---
 
-###that != this (TIL)
+### that != this (TIL)
 
 To preserve context we often assign `this` to `self` or `that`. This works, but this isn't the most elegant way to solve the problem.
 

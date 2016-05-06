@@ -29,11 +29,11 @@ $(document).ready(function(){
 
 As our projects grow, such practices contribute to greater software entropy and it becomes nearly impossible to maintain code.
 
-##Keeping it neat and clean
+## Keeping it neat and clean
 
 ---
 
-###1.The MessageHandler service.
+### 1.The MessageHandler service.
 
 Write a simple message handler service which takes in a language, parses the corresponding `language.yml` file _(from config/locales/*.yml)_ and returns it's contents as a hash.
 
@@ -59,7 +59,7 @@ class MessageHandler
 
   def possible_languages
     [ :en, :es, :pt]
-  end  
+  end
 
   def locale_file_path(language)
     File.join(Rails.root, 'config', 'locales', "#{language.to_s}.yml")
@@ -69,7 +69,7 @@ class MessageHandler
 end
 {% endhighlight %}
 
-###2.Using gon.
+### 2.Using gon.
 
 [Gon](https://github.com/gazay/gon) helps you streamline data transfer to javascript. You can set data in your controller, gon will make it available in your javascript.
 
@@ -101,7 +101,7 @@ end
 </script>
 {% endhighlight %}
 
-###3.Some Optimization
+### 3.Some Optimization
 
 While this approach works great, when ever we add/modify our YAML files we need to restart our Rails sever for it reflect in our javascript.
 
@@ -119,7 +119,7 @@ def files_changed?
 end
 {% endhighlight %}
 
-###4.Voilà
+### 4.Voilà
 Everything just works!
 
 {% highlight javascript %}
@@ -134,6 +134,6 @@ alert(app.messages.welcome_message); // 'வரவேற்பு!'
 {% endhighlight %}
 
 
-###References
+### References
 * [Gist](https://gist.github.com/nithinkrishna/6a90349dddd2e8e44b11)
 * [How rails reloads your source code in development mode?](http://crypt.codemancers.com/posts/2013-10-03-rails-reloading-in-dev-mode/)
