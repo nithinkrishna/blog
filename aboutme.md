@@ -11,8 +11,8 @@ subtitle:
 
 - Grad Student pursuing masters in Computer Science specializing in Data Science at University of Southern California.
 
-- Currently working with the [Information and Media Sciences lab](http://imsc.usc.edu) at USC on travel time prediction models with ORE. Also handles Dev Ops.
+- Currently working with the [Information and Media Sciences lab](http://imsc.usc.edu) at USC as a research engineer on solutions to problems like Travel time prediction and Social network analysis.
 
-- Software engineer for over two years at [Codebrahma](http://codebrahma.com). Engineered products ground up from diverse domains ranging from Peer to Peer Lending to Video Streaming and Social Networking.
+- Software engineer for over two years at [Codebrahma](http://codebrahma.com). Engineered products ground up from [diverse domains](https://codebrahma.com/work) ranging from Peer to Peer Lending to Video Streaming and Social Networking.
 
 - Worked extensively with Ruby, Rails, Python, NodeJS, D3, AngularJS, R and Oracle.
