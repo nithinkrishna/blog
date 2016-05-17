@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Write a lite API server with NODE-JS"
+title:  "A lite API server with NODE"
 categories: sublime-text
 comments: true
-description: A elegant, lite api server with NODE JS and reusable components
+description: An elegant, lite api server with NODE JS and reusable components
 tags:
   - express
   - nodejs
@@ -23,11 +23,13 @@ NodeJS is a better alternative topython-flask or rails-api when it comes to writ
 
 [Scaling nodejs](http://cjihrig.com/blog/scaling-node-js-applications/) application across a multi-process/multi-machine framework is pretty straight forward.
 
-NodeJS generic/lite compontents for parameter validation and caching (etc) can be built once and reused across applications.
+NodeJS generic/lite compontents for parameter validation, database connectivity and caching (etc) can be built once and reused across applications.
 
-### Caching
+***
 
-A generic caching layer to store intermediate results accelarates responses.
+#### Caching
+
+A generic caching layer to store costly results for a finite amount of time.
 
 ```javascript
 var redis = require("redis"),
@@ -92,7 +94,9 @@ Cache.reloader = function(query, key, expiry){
 };
 
 Cache.fetch = function(query, key, expiry){
-  return new Cache().get(namespacedKey(key)).fail(Cache.reloader(query, namespacedKey(key), expiry));
+  return new Cache()
+    .get(namespacedKey(key))
+    .fail(Cache.reloader(query, namespacedKey(key), expiry));
 };
 
 // Example
@@ -107,9 +111,80 @@ Country.fetchAll = function(){
 Country.fetchAll();
 ```
 
+***
 
-### Parameter Validation
-A generic parameter validation layer to validate request parameters.
+#### Database connectivity
+
+A generic connectivity layer which executes queries and is aware of query status.
+
+```javascript
+var Q        = require('q');
+var oracledb = require('oracledb');
+var dbConfig = require('./db_conf.js');
+var connection;
+
+function Connect(){
+  var deferred = Q.defer();
+
+  oracledb.getConnection({
+    user          : dbConfig.user,
+    password      : dbConfig.password,
+    connectString : dbConfig.connectString,
+  }, function(connectionError, con){
+    if(connectionError){
+      deferred.reject();
+    } else{
+      connection = con;
+      deferred.resolve();
+    };
+  });
+
+  return deferred.promise;
+};
+
+
+Connect();
+
+function QueryBuilder(queryString, fields, responseParser){
+  var deferred = Q.defer();
+
+  function defaultParser(response){
+    return response;
+  };
+
+  if(!connection){
+    // Reconnecting
+    Connect().then(function(){
+      QueryBuilder(queryString, fields, responseParser)
+    })
+    .fail(function(){
+      deferred.reject("DB Connection not established");
+    });
+  };
+
+  console.log("EXECUTING: " + queryString);
+
+  connection.execute(queryString, { }, { maxRows: 200 }, function(queryError, result){
+    if(queryError){
+      deferred.reject(queryError);
+      return;
+    };
+    deferred.resolve({ 
+      data: (responseParser || defaultParser)(result.rows), 
+      fields: ( fields || [ ] ) 
+    });
+  });
+
+  return deferred.promise;
+};
+
+exports.QueryBuilder = QueryBuilder;
+```
+
+***
+
+#### Parameter Validation
+A generic parameter validation layer which validates request parameters based on defined validation types.
 
 ```javascript
 var util      = require( "util" );
@@ -124,11 +199,14 @@ Validator.prototype.validationMessage = function(key, type, params){
   var self = this;
   switch(type){
     case "presence":
-      return util.format("Required field [%s] is not present", key);
+      return util.format("Required field [%s] is not present", 
+        key);
     case "includes":
-      return util.format("Value [%s] is not within acceptable list [%s]", self.request[key], params);
+      return util.format("Value [%s] is not within acceptable list [%s]", 
+        self.request[key], params);
     case "within":
-      return util.format("Value [%s] is not within acceptable limits [%s,%s]", self.request[key], params[0], params[1]);
+      return util.format("Value [%s] is not within acceptable limits [%s,%s]", 
+        self.request[key], params[0], params[1]);
   }
 };
 
@@ -157,7 +235,11 @@ Validator.prototype.validateIncludes = function(key, type, params){
 
 Validator.prototype.validateWithin = function(key, type, params){
   var self = this;
-  return !self.request[key] ||  ( params[0] <= parseFloat(self.request[key]) && parseFloat(self.request[key]) <= params[1] );
+  return !self.request[key] ||  
+    ( 
+      params[0] <= parseFloat(self.request[key]) && 
+      parseFloat(self.request[key]) <= params[1] 
+    );
 };
 
 
@@ -197,3 +279,8 @@ validator.validateAll([
 .then(genApiResponse)
 .fail(genFailResponse)
 ```
+
+***
+
+### Wrap up
+Writing a API server these days is like assembling a bike. With the right tools, its just a matter of fitting a few parts together and moving on.
